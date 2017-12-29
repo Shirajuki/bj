@@ -7,14 +7,13 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
-
 <body>
 	<div class="ticker-border">
 			<img src="./pics/logo.png" class="logo" alt=""/>
 			<div class="ticker">
 				<marquee scrollamount="20">
 				<img src="./pics/hearticon.png" height="40px" width="40px" alt=""/>
-				<font size="30px" face="Comic Sans MS"><b>Welcome to weabooland</b></font>
+				<font size="30px" face="Pacifico"><b id="headerss">Welcome to weabooland</b></font>
 				<img src="./pics/hearticon.png" height="40px" width="40px" alt=""/>
 				</marquee>
 			</div>
@@ -24,18 +23,83 @@
 		<li><a href="./pics/icon.png">BJ badge</a></li>
 		<li><a href="https://Shirajuki.github.io/moe">Moe</a></li>
 	</ul>
-	<iframe class="video" src="https://www.youtube.com/embed/yD_d2GQD6Yg?autoplay=1"></iframe>
+	<iframe id="video" src="https://www.youtube.com/embed/40w5coVTGJE?autoplay=1"></iframe>
 	<div class="bodymain">
 		<div class="headermain">
 			<b>We Have Some Explaining To Do...</b> </br>
 			<b>This is a Place Full of Random Bakas and Weebs!</b>
 		</div>
-		<p><img src="./pics/alert.png" width="60" height="50"> <b></b>
+		<p><img src="./pics/alert.png" width="60" height="50">We are what we pretend to be, so we must be careful what we pretend to be.</br> <b>Easter eggs everywhere</b></p>
 		<iframe class="discord" src="https://discordapp.com/widget?id=345594245437980672&theme=dark" width="290" height="450"></iframe>
 		<img class="frame" width="290" height="210" src="./pics/dance4.gif" alt=""/>
 		<a href="https://myanimelist.net/profile/Shirajukii"><img class="gif" src="./pics/dance1.gif" alt=""/></a>
 	</div>
-<script type="text/javascript" src="./js/mute.js"></script>
-<script type="text/javascript" src="./js/mobile.js"></script>
+	<span id="samurai" style="visibility: hidden;"></span>
+	<audio id="nyan" controls="" onloadstart="this.volume=0.5">
+		<source src="./ogg/nyanners.ogg">
+	</audio>
+	<audio id="pawie" controls="" onloadstart="this.volume=0.5">
+		<source src="./ogg/pawpaw.ogg">
+	</audio>
+	<img class="floater-right" src="./pics/konami.png" height="30px" width="150px" alt=""/>
+	<script>
+	var nyanner = 0;
+	var senpaw = 0;
+	var audio = new Audio('./ogg/nyanners.ogg');
+	function onPAWPAW(cb) {
+  var input = '';
+	var key = '6674';
+  document.addEventListener('keydown', function (e) {
+  	input += ("" + e.keyCode);
+    if (input === key) {
+      return cb();
+    }
+    if (!key.indexOf(input)) return;
+    input = ("" + e.keyCode);
+  	});
+	}
+	onPAWPAW(function () {
+		console.log("PAWPAW")
+		var musics = document.getElementById('pawie');
+		var ytb = document.getElementById('video');
+		document.getElementById("samurai").style.visibility="visible";
+		ytb.src = "";
+		musics.play();
+		senpaw++;
+		if (senpaw > 1) {
+			musics.pause();
+			musics.currentTime = 0;
+			senpaw = 0;
+			document.getElementById("samurai").style.visibility="hidden";
+		}
+	})
+///////////////////
+	function onKonamiCode(cb) {
+  var input = '';
+  var key = '38384040373937396665';
+  document.addEventListener('keydown', function (e) {
+  	input += ("" + e.keyCode);
+    if (input === key) {
+      return cb();
+    }
+    if (!key.indexOf(input)) return;
+    input = ("" + e.keyCode);
+  	});
+	}
+	onKonamiCode(function () {
+		console.log("*KONAMI")
+		var music = document.getElementById('nyan');
+		var ytb = document.getElementById('video');
+		document.getElementById("headerss").innerHTML = "SECRET ACTIVATED, NOW COMMENCING COMMAND PLAY MUSIC"
+		ytb.src = "";
+		music.play();
+		nyanner++;
+		if (nyanner > 1) {
+			music.pause();
+			music.currentTime = 0;
+			nyanner = 0;
+		}
+	})
+	</script>
 </body>
 </html>

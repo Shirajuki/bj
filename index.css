@@ -6,12 +6,17 @@ font-family: 'Pacifico', cursive;
 	font-family: 'Pacifico';
 	src: url('https://fonts.googleapis.com/css?family=Oswald|Pacifico');
 }
+
 html {
 	background: black url('./pics/background.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
 	margin-top: 180px;
 	margin-right: 323px;
+}
+
+audio {
+   display:none;
 }
 
 td a {
@@ -87,7 +92,7 @@ li a:hover {
 	border: 4px solid #00dd19;
 }
 
-.video {
+#video {
 	position: absolute;
 	right: 10px;
 	top: 10px;
@@ -150,4 +155,35 @@ li a:hover {
 	bottom: 0px;
 	width: 200px;
 	height: 200px;
+}
+
+.floater-right {
+	position: fixed;
+	bottom: 0px;
+	text-align: right;
+	margin: 0px 16px 16px 0px;
+	right: 0px;
+	text-shadow: 0px 0px 2px rgba(0,0,0,0.75);
+}
+
+#samurai {
+	position: fixed;
+	display: inline-block;
+	width: 6000px;
+	height: 100000px;
+	bottom: 0px;
+	left: 30px;
+	text-align: right;
+	margin: -120px 40px 54px  -34px;
+	background:url("./pics/OGSamurai.png");
+
+    -webkit-animation: tear 14s infinite linear;
+}
+@keyframes tear {
+  0% {
+	transform: translate(0, 0px);
+  }
+  100% {
+	transform: translate(0px, 4700px);
+  }
 }
