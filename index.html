@@ -12,9 +12,9 @@
 			<img src="./pics/logo.png" id="logo" alt=""/>
 			<div id="ticker">
 				<marquee scrollamount="20">
-				<img src="./pics/hearticon.png" height="40px" width="40px" alt=""/>
-				<font size="30px" face="Pacifico"><b id="headerss">Welcome to weabooland</b></font>
-				<img src="./pics/hearticon.png" height="40px" width="40px" alt=""/>
+				<a href="#" onclick="heart()"><img id="heart" src="./pics/hearticon.png" height="40px" width="40px" alt=""/></a>
+				<font size="30px" face="Pacifico"><b id="headerss">Welcome to weabooland </b></font>
+				<img id="earth" src="./pics/hearticon.png" height="40px" width="40px" alt=""/>
 				</marquee>
 			</div>
 	<ul id="ul">
@@ -42,7 +42,37 @@
 		<source src="./ogg/pawpaw.ogg">
 	</audio>
 	<img id="floater-right" src="./pics/konami.png" height="30px" width="150px" alt=""/>
+	<a href="#" onclick="earth1()"><img id="earthchan1" src="./pics/earthchan.png" style="visibility: hidden;"/></a>
+	<img id="earthchan2" src="./pics/earthchan.png" style="visibility: hidden;"/>
+	<img id="earthchan3" src="./pics/earthchan.png" style="visibility: hidden;"/>
+	<img id="earthchan4" src="./pics/earthchan.png" style="visibility: hidden;"/>
+	<span id="justmonika" style="visibility: hidden;"></span>
+	<img id="monika" src="./pics/monika.png" style="visibility: hidden;"/>
 	<script>
+	function heart() {
+		console.log("♥");
+		document.getElementById("earth").src="./pics/earth.png";
+		document.getElementById("heart").src="./pics/earth.png";
+		setTimeout(function(){
+			document.getElementById("earthchan1").style.visibility="visible"; }, 2500);
+	}
+	function earth1() {
+		console.log("earth1");
+		document.getElementById("earthchan1").style.visibility="hidden";
+		document.getElementById("earthchan2").style.visibility="visible";
+		document.getElementById("earthchan3").style.visibility="visible";
+		document.getElementById("earthchan4").style.visibility="visible";
+		setTimeout(function(){
+			document.getElementById("earthchan2").style.visibility="hidden";
+			document.getElementById("earthchan3").style.visibility="hidden";
+			document.getElementById("earthchan4").style.visibility="hidden";
+			monika();}, 5000);
+		setTimeout(function(){
+			document.getElementById("monika").style.visibility="visible";}, 5300);
+	}
+	function monika() {
+		console.log("monika");
+	}
 	var nyanner = 0;
 	var senpaw = 0;
 	var audio = new Audio('./ogg/nyanners.ogg');
@@ -90,7 +120,7 @@
 		console.log("*KONAMI")
 		var music = document.getElementById('nyan');
 		var ytb = document.getElementById('video');
-		document.getElementById("headerss").innerHTML = "SECRET ACTIVATED, NOW COMMENCING COMMAND PLAY MUSIC";
+		document.getElementById("headerss").innerHTML = "SECRET ACTIVATED, NOW COMMENCING COMMAND PLAY MUSIC ";
 		document.getElementById("ticker").style.border="4px solid DeepPink";
 		document.getElementById("ul").style.border="4px solid DeepPink";
 		document.getElementById("video").style.border="4px solid DeepPink";
